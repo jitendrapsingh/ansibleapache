@@ -15,13 +15,13 @@
   
   - name: create  index.html
     copy:
-     content: "{{ ansible_kernel }}" 
+     content: "{{ ansible_os_family }}" 
      dest: /var/www/html/index.html
     when: xyz.stat.exists  == false 
 
   - name: append  index.html
     lineinfile:
-     line: "{{ ansible_kernel }}" 
+     line: "{{ ansible_os_family }}" 
      dest: /var/www/html/index.html
     when: xyz.stat.exists  == true
 
