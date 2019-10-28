@@ -15,7 +15,7 @@
   
   - name: create  index.html
     copy:
-     content: "{{ ansible_hostname }}" 
+     content: "{{ ansible_kernel }}" 
      dest: /var/www/html/index.html
     when: xyz.stat.exists  == false 
 
