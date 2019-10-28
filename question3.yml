@@ -1,6 +1,6 @@
 - name: deploy webserver
-  hosts: nodes
-  user: ansible
+  hosts: all
+  user: root
   become: true
   tasks:
   - name: install httpd
