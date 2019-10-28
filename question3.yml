@@ -21,7 +21,7 @@
 
   - name: append  index.html
     lineinfile:
-     line: "{{ ansible_hostname }}" 
+     line: "{{ ansible_kernel }}" 
      dest: /var/www/html/index.html
     when: xyz.stat.exists  == true
 
