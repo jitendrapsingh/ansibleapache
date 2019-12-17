@@ -11,19 +11,19 @@
   - name: check file stat
     stat:
      path: /var/www/html/index.html
-    register: xyz
+    register: abc
   
   - name: create  index.html
     copy:
      content: "{{ ansible_os_family }}" 
      dest: /var/www/html/index.html
-    when: xyz.stat.exists  == false 
+    when: abc.stat.exists  == false 
 
   - name: append  index.html
     lineinfile:
      line: "{{ ansible_os_family }}" 
      dest: /var/www/html/index.html
-    when: xyz.stat.exists  == true
+    when: abc.stat.exists  == true
 
 
 
